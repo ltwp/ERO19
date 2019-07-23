@@ -2,7 +2,7 @@
 % lukas_wp@berkeley.edu
 % UC Berkeley / USGS PCMSC
 
-% Last Edited 2 July 2019
+% Last Edited 23 July 2019
 
 % ERO19 MASTER PROCESSING FILE
 
@@ -11,7 +11,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TRIP DATA CLEANING TO HAPPEN IN SEPARATE FILES
 
-close all
 depths = [-0.5; -1; -2; -3; -4; -5];
 n_sections = length(depths);
 
