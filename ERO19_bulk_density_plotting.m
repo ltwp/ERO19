@@ -2,20 +2,7 @@
 % lukas_wp@berkeley.edu
 % UC Berkeley / USGS PCMSC
 
-% Last Edited July 15 2019
-
-% ALL CORE NAMES HERE ARE UP FOR DEBATE...
-
-% FIGURE: ALL SECTION DENSITIES, COLOR-CODED BY EMBAYMENT
-% figure
-% hold on
-% for ii = 1:6
-%     scatter(bulk_density(:,ii),depths,20,'r')
-%     scatter(bulk_density(:,ii+6),depths,20,'b')
-% end
-% xlabel('Bulk Density (g/cm^3)'); ylabel('Depth below surface (cm)');
-% legend('San Pablo','Grizzly')
-% title('Comparison of Bays')
+% Last Edited July 23 2019
 
 colors = {'r','b','g','k'};
 four_titles = {'San Pablo 1','San Pablo 2','Grizzly 1','Grizzly 2'};
@@ -53,44 +40,6 @@ for ii = 1:n_cores
     axis([1.1,1.5,-5.5,0]);
 end
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% NOT YET FIXED
-% figure
-% subplot(2,2,1)
-% hold on
-% for jj = 1:n_sections
-%     errorbar(intra_core_means(jj,1),depths(jj),intra_core_std(jj,1),'horizontal','bo');
-% end
-% title('San Pablo Core 1');
-% xlabel('Bulk Density (g/cm^3)'); ylabel('Depth');
-% axis([1.1,1.5,-5.5,0]); 
-% 
-% subplot(2,2,3)
-% hold on
-% for jj = 1:n_sections
-%     errorbar(intra_core_means(jj,2),depths(jj),intra_core_std(jj,2),'horizontal','bo');
-% end
-% title('San Pablo Core 2');
-% xlabel('Bulk Density (g/cm^3)'); ylabel('Depth');
-% axis([1.1,1.5,-5.5,0]); 
-% 
-% subplot(2,2,2)
-% hold on
-% for jj = 1:n_sections
-%     errorbar(intra_core_means(jj,4),depths(jj),intra_core_std(jj,4),'horizontal','bo');
-% end
-% title('Grizzly Core 1');
-% xlabel('Bulk Density (g/cm^3)'); ylabel('Depth');
-% axis([1.1,1.5,-5.5,0]); 
-% 
-% subplot(2,2,4)
-% hold on
-% for jj = 1:n_sections
-%     errorbar(intra_core_means(jj,3),depths(jj),intra_core_std(jj,3),'horizontal','bo');
-% end
-% title('Grizzly Core 2');
-% xlabel('Bulk Density (g/cm^3)'); ylabel('Depth');
-% axis([1.1,1.5,-5.5,0]); 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FIGURE: MEANS AND STD OF BULK DENSITY WITHIN CORES, TWO-BAY COMPARISON
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -116,33 +65,4 @@ end
 title('Grizzly');
 xlabel('Bulk Density (g/cm^3)'); ylabel('Depth');
 axis([1.1,1.5,-5.5,0]); 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% NOT YET FIXED
-% figure
-% subplot(2,1,1)
-% hold on
-% for jj = 1:n_sections
-%     errorbar(intra_core_means(jj,1),depths(jj),intra_core_std(jj,1),'horizontal','bo');
-% end
-% 
-% for jj = 1:n_sections
-%     errorbar(intra_core_means(jj,2),depths(jj),intra_core_std(jj,2),'horizontal','ro');
-% end
-% title('San Pablo');
-% xlabel('Bulk Density (g/cm^3)'); ylabel('Depth');
-% axis([1.1,1.5,-5.5,0]); 
-% 
-% subplot(2,1,2)
-% hold on
-% for jj = 1:n_sections
-%     errorbar(intra_core_means(jj,4),depths(jj),intra_core_std(jj,4),'horizontal','bo');
-% end
-% 
-% for jj = 1:n_sections
-%     errorbar(intra_core_means(jj,3),depths(jj),intra_core_std(jj,3),'horizontal','ro');
-% end
-% title('Grizzly');
-% xlabel('Bulk Density (g/cm^3)'); ylabel('Depth');
-% axis([1.1,1.5,-5.5,0]); 
 
