@@ -6,7 +6,9 @@
 % lukas_wp@berkeley.edu
 % UC Berkeley / USGS PCMSC
 
-% Last Edited 2 July 2019
+% Last Edited 31 July 2019
+
+fprintf('Running Trip 01 Processing.\n');
 
 weights = csvread('trip01/01_bulk_densities.csv',6,1); 
 
