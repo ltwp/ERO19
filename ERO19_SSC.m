@@ -8,13 +8,16 @@ grizzly = [M(1:8,:); M(26:35,:); M(44:51,:); M(60:67,:)];
 sanpablo = [M(9:25,:); M(36:43,:); M(52:59,:); M(68:75,:)];
 
 N = csvread('SSC_master_averaged.csv',1,0);
+% Requires weirdly formatted master list of water samples. 
 % Pablo Mooring, Pablo Spider, Grizzly Mooring, Grizzly Spider
 
-p_m = N(:,1:2); %pablo_mooring(pablo_mooring==0) = [];
-p_s = N(:,3:4); %pablo_spider(pablo_spider==0) = [];
-g_m = N(:,5:6); %grizzly_mooring(grizzly_mooring==0) = [];
-g_s = N(:,7:8); %grizzly_spider(grizzly_spider==0) = [];
+p_m = N(:,1:2); % Pablo Mooring
+p_s = N(:,3:4); % Pablo Spider
+g_m = N(:,5:6); % Grizzly Mooring
+g_s = N(:,7:8); % Grizzly Spider
+% Note the above arrays are filled with zeros
 
+% MATLAB plotting colors...
 color1 = [0, 0.447, 0.741];
 color2 = [0.85, 0.325, 0.098];
 color3 = [0.929, 0.694, 0.125];

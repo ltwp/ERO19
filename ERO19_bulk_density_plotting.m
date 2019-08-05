@@ -4,6 +4,9 @@
 
 % Last Edited July 23 2019
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Variable Preparation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 colors = {'r','b','g','k'};
 four_titles = {'San Pablo 1','San Pablo 2','Grizzly 1','Grizzly 2'};
 two_titles = {'San Pablo','Grizzly'};

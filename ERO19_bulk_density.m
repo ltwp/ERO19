@@ -4,6 +4,10 @@
 
 % Last Edited July 31 2019
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Variable Preparation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Bag Masses in Col. 2, Wet Masses Col. 3, Dry Masses Col. 4
 dry_mass = weights(:,4) - weights(:,2); dry_mass = reshape(dry_mass,n_sections,n_syringes);
 water_mass = weights(:,3) - weights(:,4); water_mass = reshape(water_mass,n_sections,n_syringes);
@@ -17,13 +21,20 @@ else
 end
 salinity = [first_salinity.*ones(n_sections,n_syringes/2) second_salinity.*ones(n_sections,n_syringes/2)];
 
-bulk_density = zeros(n_sections,n_syringes);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bulk Density Calculation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+bulk_density = zeros(n_sections,n_syringes);
 for ii = 1:n_syringes
     bulk_density(:,ii) = f_adjust_saline_bulk_density(water_mass(:,ii),dry_mass(:,ii),salinity(:,ii));
 end
 % N.B. bulk_density is in the order of cores in the .csv file. Use
-% is_grizzly_first (T/F) to determine what order the cores are in. 
+% is_grizzly_first (1/0) to determine what order the cores are in. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Get Bulk Density means/std
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 intra_core_means = zeros(n_sections,n_cores);
 intra_core_std = zeros(n_sections,n_cores);

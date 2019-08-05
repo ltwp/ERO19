@@ -20,6 +20,7 @@ end
 
 water_density = 1.00; % g/cm3
 if nargin < 4
+    % Assume quartz density
     sediment_density = 2.65; % g/cm3
 end
 
@@ -28,6 +29,9 @@ dry_sediment_mass = unadjusted_dry_sediment_mass - salt_mass;
 porosity = (water_mass./water_density)./((water_mass./water_density + dry_sediment_mass./sediment_density));
 dry_bulk_density = (1-porosity).*sediment_density; % Not used but hey, it's here. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Calculate Bulk Density via Porosity
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 bulk_density = (dry_sediment_mass + water_mass)./(dry_sediment_mass./sediment_density + water_mass/water_density); 
 
 end

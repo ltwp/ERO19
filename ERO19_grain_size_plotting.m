@@ -4,6 +4,11 @@
 
 % Last Edited 22 July 2019
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Variable Preparation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Gradient of colors
 color1 = '#FDC783';
 color2 = '#EA915C';
 color3 = '#815030';
@@ -17,7 +22,7 @@ depth4 = '4-5cm depth';
 depth_titles = {depth1, depth2, depth3, depth4};
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% EACH CORE IN SAN PABLO BAY: SAME DEPTHS COMPARED
+% Comparing same depths in each core of each bay. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 figure
@@ -53,11 +58,9 @@ xlim([-inf 1])
 sgtitle(second_label);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% BOUND PLOTS ACROSS DEPTHS, COMPARING BAYS
+% Bound plots across depths, between bays. 
+% http://kellyakearney.net/2016/06/10/boundedline.html
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% http://kellyakearney.net/2016/06/10/boundedline.html.
-% TEST SECTION
 
 figure
 for ii = 1:n_GS_depths
@@ -107,9 +110,12 @@ xlim([-inf -1])
 % xlim([-inf 1])
 % legend('0-0.5cm','0.5-1cm','2-3cm','4-5cm');
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Old clunky plotting 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-figure % San Pablo
+figure 
 
 f(1) = subplot(2,3,1);
 semilogx(size_bins,GS(1,:),'Color',color1);
@@ -167,8 +173,7 @@ xlim([-inf 1])
 sgtitle(first_label);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% EACH CORE IN SAN PABLO BAY: SAME DEPTHS COMPARED
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 figure 
 
 f(1) = subplot(2,3,1);
