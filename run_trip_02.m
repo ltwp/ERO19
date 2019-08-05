@@ -8,7 +8,7 @@
 
 % Last Edited 31 July 2019
 
-fprintf('Running Trip 03 Processing.\n');
+fprintf('Running Trip 02 Processing.\n');
 
 weights = csvread('trip02/02_bulk_densities.csv',6,1); 
 

@@ -22,7 +22,7 @@ for ii = 1:n_cores
     end
     xlabel('Bulk Density (g/cm^3'); ylabel('Depth below surface (cm)');
     title(four_titles{ii});
-    axis([1.1,1.5,-5.5,0]); 
+    axis([1.1,1.6,-5.5,0]); 
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,7 +37,7 @@ for ii = 1:n_cores
 
     xlabel('Bulk Density (g/cm^3'); ylabel('Depth below surface (cm)');
     title(four_titles{ii});
-    axis([1.1,1.5,-5.5,0]);
+    axis([1.1,1.6,-5.5,0]);
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -53,7 +53,7 @@ for kk = 1:n_sp_cores
 end
 title('San Pablo');
 xlabel('Bulk Density (g/cm^3)'); ylabel('Depth');
-axis([1.1,1.5,-5.5,0]); 
+axis([1.1,1.6,-5.5,0]); 
     
 g(2) = subplot(2,1,2);
 hold on
@@ -64,5 +64,5 @@ for kk = n_sp_cores+1:n_sp_cores+n_g_cores
 end
 title('Grizzly');
 xlabel('Bulk Density (g/cm^3)'); ylabel('Depth');
-axis([1.1,1.5,-5.5,0]); 
+axis([1.1,1.6,-5.5,0]); 
 
