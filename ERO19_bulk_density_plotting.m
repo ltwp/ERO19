@@ -23,7 +23,7 @@ for ii = 1:n_cores
         % combined_cores is always SAN PABLO then GRIZZLY
         scatter(bulk_density(:,jj),depths,20,colors{ii});
     end
-    xlabel('Bulk Density (g/cm^3'); ylabel('Depth below surface (cm)');
+    xlabel('Bulk Density (g/cm^3)'); ylabel('Depth below surface (cm)');
     title(four_titles{ii});
     axis([1.1,1.6,-5.5,0]); 
 end
@@ -38,7 +38,7 @@ for ii = 1:n_cores
     
     errorbar(intra_core_means(:,ii),depths(:),intra_core_std(:,ii),'horizontal','bo');
 
-    xlabel('Bulk Density (g/cm^3'); ylabel('Depth below surface (cm)');
+    xlabel('Bulk Density (g/cm^3)'); ylabel('Depth below surface (cm)');
     title(four_titles{ii});
     axis([1.1,1.6,-5.5,0]);
 end

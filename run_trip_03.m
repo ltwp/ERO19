@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TRIP 03 (July 7/8 2019)
+% TRIP 03 (July 9/10 2019)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Lukas WinklerPrins
@@ -20,7 +20,7 @@ grizzly_cores = [1 3; 4 6];
 salinity_sanpablo = 10; % ppt, ASSUMED
 salinity_grizzly = 0; % ppt, ASSUMED
 
-% GS = csvread('trip02/02_grain_size.csv',0,2);
+% GS = csvread('trip03/03_grain_size.csv',0,2);
 % % Note Row 1 is size in mm, Row 2 is Phi values, thereafter are % weights.
 % % Skipped Sample IDs & Bag #s. 
 % GS = GS(3:end,:); % Trim it! 

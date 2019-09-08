@@ -7,7 +7,7 @@
 % ERO19 MASTER PROCESSING FILE
 
 % Ostensibly to be run to process each individual field run. 
-% DATA CLEANING TO HAPPEN IN TRIP RUN FILES
+% DATA CLEANING TO HAPPEN IN TRIP RUN FILES, BEFORE RUNNING THIS SCRIPT
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Variable Preparation
@@ -58,4 +58,4 @@ end
 
 ERO19_bulk_density
 
-%ERO19_grain_size
+% ERO19_grain_size
