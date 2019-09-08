@@ -48,5 +48,3 @@ for ii = 1:n_sections
     end
 end
 
-ERO19_bulk_density_plotting
-
