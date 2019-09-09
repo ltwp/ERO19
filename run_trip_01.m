@@ -30,4 +30,15 @@ GS = [GS(1:16,:); GS(18:49,:)];
 % Remove duplicates which didn't seem to have an effect. 
 n_GS_depths = 4;
 
-ERO19_master
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Run Processing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ERO19_prep
+
+ERO19_bulk_density
+% ERO19_bulk_density_plotting
+
+ERO19_grain_size
+% ERO19_grain_size_plotting
+
+

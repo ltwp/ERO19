@@ -51,13 +51,3 @@ else
     first_label = 'San Pablo Bay';
     second_label = 'Grizzly Bay';
 end
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Run Processing
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-ERO19_bulk_density
-ERO19_bulk_density_plotting
-
-% ERO19_grain_size
-% ERO19_grain_size_plotting

@@ -22,11 +22,24 @@ grizzly_cores = [7 9; 10 12];
 salinity_sanpablo = 10; % ppt, ASSUMED
 salinity_grizzly = 0; % ppt, ASSUMED
 
-ERO19_master
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Run Processing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ERO19_prep
 
-long_syringe_bd = f_adjust_saline_bulk_density(last_long_syringe(:,3) - last_long_syringe(:,4),last_long_syringe(:,4)-last_long_syringe(:,2),0);
-figure
-scatter(long_syringe_bd,[-0.5 -1 -2 -3 -4 -5 -6 -7 -8],'bo');
-axis([1.1,1.6,-8.5,0]);
-xlabel('Bulk Density (g/cm^3'); ylabel('Depth below surface (cm)');
-title('Long Syringe Bulk Density, Grizzly Aug 21');
+ERO19_bulk_density
+% ERO19_bulk_density_plotting
+
+% ERO19_grain_size
+% ERO19_grain_size_plotting
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Extra Long Syringe
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% long_syringe_bd = f_adjust_saline_bulk_density(last_long_syringe(:,3) - last_long_syringe(:,4),last_long_syringe(:,4)-last_long_syringe(:,2),0);
+% figure
+% scatter(long_syringe_bd,[-0.5 -1 -2 -3 -4 -5 -6 -7 -8],'bo');
+% axis([1.1,1.6,-8.5,0]);
+% xlabel('Bulk Density (g/cm^3'); ylabel('Depth below surface (cm)');
+% title('Long Syringe Bulk Density, Grizzly Aug 21');

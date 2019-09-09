@@ -21,4 +21,13 @@ grizzly_cores = [1 3; 4 6];
 salinity_sanpablo = 10; % ppt, ASSUMED
 salinity_grizzly = 0; % ppt, ASSUMED
 
-ERO19_master
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Run Processing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ERO19_prep
+
+ERO19_bulk_density
+% ERO19_bulk_density_plotting
+
+% ERO19_grain_size
+% ERO19_grain_size_plotting

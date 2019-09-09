@@ -24,4 +24,13 @@ GS = csvread('trip02/02_grain_size.csv',2,2);
 % Note Row 1 is size in mm, Row 2 is Phi values, thereafter are % weights.
 % Skipped Sample IDs & Bag #s. 
 
-ERO19_master
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Run Processing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ERO19_prep
+
+ERO19_bulk_density
+% ERO19_bulk_density_plotting
+
+ERO19_grain_size
+% ERO19_grain_size_plotting
