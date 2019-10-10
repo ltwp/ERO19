@@ -18,8 +18,8 @@ grizzly_cores = [7 9; 10 12];
 
 % Gomexes as such: SPB 1{1,2,3} 2{4,5,6} // GB 2{7,8,9} 1{10,11,12}
 
-salinity_sanpablo = 10; % ppt, ASSUMED
-salinity_grizzly = 0; % ppt, ASSUMED
+salinity_sanpablo = 13.5; % ppt
+salinity_grizzly = 0.4; % ppt
 
 GS = csvread('trip01/01_grain_size.csv',0,2);
 % Note Row 1 is size in mm, Row 2 is Phi values, thereafter are % weights.
@@ -36,9 +36,9 @@ n_GS_depths = 4;
 ERO19_prep
 
 ERO19_bulk_density
-% ERO19_bulk_density_plotting
+ERO19_bulk_density_plotting
 
 ERO19_grain_size
-% ERO19_grain_size_plotting
+ERO19_grain_size_plotting
 
 

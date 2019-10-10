@@ -17,10 +17,11 @@ grizzly_cores = [1 3; 4 6];
 % Each row represents a different gomex, with syringe number starts and
 % ends. 
 
-salinity_sanpablo = 10; % ppt, ASSUMED
-salinity_grizzly = 0; % ppt, ASSUMED
+salinity_sanpablo = 15.8; % ppt
+salinity_grizzly = 1.8; % ppt
 
 GS = csvread('trip02/02_grain_size.csv',2,2);
+n_GS_depths = 4;
 % Note Row 1 is size in mm, Row 2 is Phi values, thereafter are % weights.
 % Skipped Sample IDs & Bag #s. 
 
@@ -30,7 +31,7 @@ GS = csvread('trip02/02_grain_size.csv',2,2);
 ERO19_prep
 
 ERO19_bulk_density
-% ERO19_bulk_density_plotting
+ERO19_bulk_density_plotting
 
 ERO19_grain_size
-% ERO19_grain_size_plotting
+ERO19_grain_size_plotting

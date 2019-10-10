@@ -19,8 +19,11 @@ grizzly_cores = [7 9; 10 12];
 % Each row represents a different gomex, with syringe number starts and
 % ends. 
 
-salinity_sanpablo = 10; % ppt, ASSUMED
-salinity_grizzly = 0; % ppt, ASSUMED
+salinity_sanpablo = 20.9; % ppt, from Trip 6
+salinity_grizzly = 6.5; % ppt, from Trip 6
+
+GS = csvread('trip07/07_grain_size.csv',2,2);
+n_GS_depths = 4;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Run Processing
@@ -28,10 +31,10 @@ salinity_grizzly = 0; % ppt, ASSUMED
 ERO19_prep
 
 ERO19_bulk_density
-% ERO19_bulk_density_plotting
+ERO19_bulk_density_plotting
 
-% ERO19_grain_size
-% ERO19_grain_size_plotting
+ERO19_grain_size
+ERO19_grain_size_plotting
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Extra Long Syringe
