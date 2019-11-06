@@ -30,7 +30,7 @@ porosity = (water_mass./water_density)./((water_mass./water_density + dry_sedime
 dry_bulk_density = (1-porosity).*sediment_density; % Not used but hey, it's here. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-% Calculate Bulk Density via Porosity
+% Calculate Bulk Density
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 bulk_density = (dry_sediment_mass + water_mass)./(dry_sediment_mass./sediment_density + water_mass/water_density); 
 

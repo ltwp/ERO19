@@ -5,23 +5,6 @@
 % Last Edited 22 July 2019
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Variable Preparation
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Gradient of colors
-color1 = '#FDC783';
-color2 = '#EA915C';
-color3 = '#815030';
-color4 = '#291C13';
-% colors = {color1, color2, color3, color4};
-
-depth1 = '0-0.5cm depth';
-depth2 = '0.5-1cm depth';
-depth3 = '2-3cm depth';
-depth4 = '4-5cm depth';
-depth_titles = {depth1, depth2, depth3, depth4};
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Comparing same depths in each core of each bay. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

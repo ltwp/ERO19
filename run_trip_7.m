@@ -29,12 +29,13 @@ n_GS_depths = 4;
 % Run Processing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ERO19_prep
+ERO19_gs_prep
 
 ERO19_bulk_density
-ERO19_bulk_density_plotting
+% ERO19_bulk_density_plotting
 
 ERO19_grain_size
-ERO19_grain_size_plotting
+% ERO19_grain_size_plotting
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Extra Long Syringe
