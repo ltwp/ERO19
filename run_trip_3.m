@@ -23,6 +23,9 @@ salinity_grizzly = 6.98; % ppt
 GS = csvread('trip03/03_grain_size.csv',2,2);
 n_GS_depths = 4;
 
+carbon = csvread('trip03/03_carbon.csv',1,0);
+% Total Carbon, Total Organic Carbon, Total Inorganic Carbon, CaCO3
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Run Processing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -34,3 +37,5 @@ ERO19_bulk_density
 
 ERO19_grain_size
 % ERO19_grain_size_plotting
+
+ERO19_carbon

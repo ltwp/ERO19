@@ -2,10 +2,13 @@
 % lukas_wp@berkeley.edu
 % UC Berkeley / USGS PCMSC
 
-% Last Updated 11 October 2019
+% Last Updated 6 November 2019
 
 % Plotting change in time for bulk density over trips 1-7 (summer 2019)
 ERO19_prep
+
+sanpablo_datetimes = [datetime(2019,6,12,10,30,0), datetime(2019,6,27,9,15,00), datetime(2019,7,10,9,30,0), datetime(2019,7,19,7,15,0), datetime(2019,8,7,9,15,0), datetime(2019,8,15,10,15,0),datetime(2019,8,21,8,15,0),datetime(2019,11,25,9,0,0)];
+grizzly_datetimes = [datetime(2019,6,13,9,0,0), datetime(2019,6,26,9,45,0), datetime(2019,7,9,10,0,0), datetime(2019,7,18,8,15,0), datetime(2019,8,6,10,0,0), datetime(2019,8,14,11,45,0), datetime(2019,8,21,11,0,0),datetime(2019,11,25,10,0,0)];
 
 sanpablo_bd_means = [];
 sanpablo_bd_std = [];
@@ -31,15 +34,18 @@ for nn = 1:n_trips
     sanpablo_bd_std = [sanpablo_bd_std std_sp_core_bd];
     
     % To plot just averages, across all cores...
-%     errorbar(avg_sp_core_bd,depths,std_sp_core_bd,'horizontal','o-','MarkerEdgeColor',colors_g(nn,:),'Color',colors_g(nn,:),'LineWidth',2);
+%     errorbar(avg_sp_core_bd,depths,std_sp_core_bd./sqrt(3),'horizontal','o-','MarkerEdgeColor',colors_g(nn,:),'Color',colors_g(nn,:),'LineWidth',2);
+% Note, Standard Error of the Mean
     plot(avg_sp_core_bd,depths,'o-','Color',colors_r(nn,:),'LineWidth',2);
-    
     
     % This for loop plots lines for each box core. 
 %     for kk = 1:n_sp_cores
 %         errorbar(intra_core_means(:,kk),depths(:),intra_core_std(:,kk),'horizontal','o-','MarkerEdgeColor',colors(nn,:),'Color',colors(nn,:),'LineWidth',2);
 %         plot(intra_core_means(:,kk),depths(:),'o-','MarkerEdgeColor',colors(nn,:),'Color',colors(nn,:),'LineWidth',2);
 %     end
+
+    
+
 end
 title('San Pablo Bay','FontSize',24);
 xlabel('Bulk Density (g/cm^3)'); ylabel('Depth (cm)');

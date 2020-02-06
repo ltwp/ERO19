@@ -17,13 +17,16 @@ n_sections = length(depths);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Some Trip Variables
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-n_trips = 7;
+n_trips = 8;
 springs = [1 4 6]; % Trip #s which were Spring Tides
 neaps = [2 3 5 7]; % Trips #s which were Neap Tides
 trip_date_labels = {'1: June 12/13','2: June 26/27','3: July 9/10','4: July 18/19','5: Aug 6/7','6: Aug 14/15','7: Aug 21'};
 % Arbitrarily putting Trip Times at 08:00 !!! NOTE !!!
 % Only indicates first day of two-day trips. 
 trip_datetimes = [datetime(2019,6,12,8,0,0); datetime(2019,6,26,8,0,0); datetime(2019,7,9,8,0,0); datetime(2019,7,18,8,0,0); datetime(2019,8,6,8,0,0); datetime(2019,8,14,8,0,0); datetime(2019,8,21,8,0,0)];
+
+sanpablo_datetimes = [datetime(2019,6,12,10,30,0), datetime(2019,6,27,9,15,00), datetime(2019,7,10,9,30,0), datetime(2019,7,19,7,15,0), datetime(2019,8,7,9,15,0), datetime(2019,8,15,10,15,0),datetime(2019,8,21,8,15,0)];
+grizzly_datetimes = [datetime(2019,6,13,9,0,0), datetime(2019,6,26,9,45,0), datetime(2019,7,9,10,0,0), datetime(2019,7,18,8,15,0), datetime(2019,8,6,10,0,0), datetime(2019,8,14,11,45,0), datetime(2019,8,21,11,0,0)];
 
 % Trips with Wind Events (>8m/s winds 
 % Trip 01 at Grizzly

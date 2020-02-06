@@ -1,4 +1,4 @@
-function bulk_density = f_adjust_saline_bulk_density(water_mass,unadjusted_dry_sediment_mass,salinity,sediment_density)
+function [bulk_density,dry_bulk_density,porosity] = f_adjust_saline_bulk_density(water_mass,unadjusted_dry_sediment_mass,salinity,sediment_density)
 % F_ADJUST_SALINE_BULK_DENSITY(water mass, dry sediment mass, salinity,
 % sediment density) calculates the mass of salt left on sediment sample(s)
 % after they have been dried, and accounts for that mass in calculating the
@@ -10,7 +10,7 @@ function bulk_density = f_adjust_saline_bulk_density(water_mass,unadjusted_dry_s
 % lukas_wp@berkeley.edu
 % UC Berkeley / USGS PCMSC
 
-% Last Edited June 20 2019
+% Last Edited January 28 2020
 
 if isscalar(salinity)
     fprintf('Assuming given salinity stands for all samples.\n');

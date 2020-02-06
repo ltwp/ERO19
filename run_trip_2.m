@@ -25,6 +25,9 @@ n_GS_depths = 4;
 % Note Row 1 is size in mm, Row 2 is Phi values, thereafter are % weights.
 % Skipped Sample IDs & Bag #s. 
 
+carbon = csvread('trip02/02_carbon.csv',1,0);
+% Total Carbon, Total Organic Carbon, Total Inorganic Carbon, CaCO3
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Run Processing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -36,3 +39,5 @@ ERO19_bulk_density
 
 ERO19_grain_size
 % ERO19_grain_size_plotting
+
+ERO19_carbon

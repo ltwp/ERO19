@@ -2,14 +2,15 @@
 % lukas_wp@berkeley.edu
 % UC Berkeley / USGS PCMSC
 
-% Last Edited July 31 2019
+% Last Edited January 28 2020
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Variable Preparation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Bag Masses in Col. 2, Wet Masses Col. 3, Dry Masses Col. 4
-dry_mass = weights(:,4) - weights(:,2); dry_mass = reshape(dry_mass,n_sections,n_syringes);
+dry_mass = weights(:,4) - weights(:,2); 
+dry_mass = reshape(dry_mass,n_sections,n_syringes);
 water_mass = weights(:,3) - weights(:,4); water_mass = reshape(water_mass,n_sections,n_syringes);
 
 if is_grizzly_first
@@ -23,11 +24,13 @@ salinity = [first_salinity.*ones(n_sections,n_syringes/2) second_salinity.*ones(
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bulk Density Calculation
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 bulk_density = zeros(n_sections,n_syringes);
+dry_bulk_density = zeros(n_sections,n_syringes);
+porosity = zeros(n_sections,n_syringes);
 for ii = 1:n_syringes
-    bulk_density(:,ii) = f_adjust_saline_bulk_density(water_mass(:,ii),dry_mass(:,ii),salinity(:,ii));
+    [bulk_density(:,ii),dry_bulk_density(:,ii),porosity(:,ii)] = f_adjust_saline_bulk_density(water_mass(:,ii),dry_mass(:,ii),salinity(:,ii));
 end
 % N.B. bulk_density is in the order of cores in the .csv file. Use
 % is_grizzly_first (1/0) to determine what order the cores are in. 

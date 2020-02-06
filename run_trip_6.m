@@ -18,8 +18,8 @@ grizzly_cores = [1 3; 4 6];
 % Each row represents a different gomex, with syringe number starts and
 % ends. 
 
-salinity_sanpablo = 20.5; % ppt
-salinity_grizzly = 8.5; % ppt
+salinity_sanpablo = 20.5; % ppt, from trip 6
+salinity_grizzly = 6.5; % ppt, from trip 6
 
 GS = csvread('trip06/06_grain_size.csv',2,2);
 n_GS_depths = 4;
