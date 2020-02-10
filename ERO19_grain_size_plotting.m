@@ -98,7 +98,7 @@ hold off
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Old clunky plotting 
+% Clunky Plotting 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 figure 

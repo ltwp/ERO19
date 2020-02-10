@@ -18,17 +18,19 @@ grizzly_cores = [7 12];
 % Each row represents a different gomex, with syringe number starts and
 % ends. 
 
+% NOTE THIS TRIP... B/C ALL SYRINGES CAME FROM ONE CORE, BREAKS SOME
+% INTRA_CORE_MEAN CODE (i.e. in ERO19_bd_over_time)?could arbitrarily
+% separate 
+
 salinity_sanpablo = 20.9; % ppt, from Trip 7
 salinity_grizzly = 6.5; % ppt, from Trip 7
 
 % GS = csvread('trip07/07_grain_size.csv',2,2);
-% n_GS_depths = 4;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Run Processing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ERO19_prep
-ERO19_gs_prep
 
 ERO19_bulk_density
 ERO19_bulk_density_plotting

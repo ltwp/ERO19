@@ -13,13 +13,16 @@
 
 depths = [-0.5; -1; -2; -3; -4; -5];
 n_sections = length(depths);
+n_GS_depths = 4;
+combined_cores = [sanpablo_cores; grizzly_cores];
+n_sp_cores = size(sanpablo_cores,1);
+n_g_cores = size(grizzly_cores,1);
+n_cores = n_sp_cores + n_g_cores;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Some Trip Variables
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 n_trips = 8;
-springs = [1 4 6]; % Trip #s which were Spring Tides
-neaps = [2 3 5 7]; % Trips #s which were Neap Tides
 trip_date_labels = {'1: June 12/13','2: June 26/27','3: July 9/10','4: July 18/19','5: Aug 6/7','6: Aug 14/15','7: Aug 21'};
 % Arbitrarily putting Trip Times at 08:00 !!! NOTE !!!
 % Only indicates first day of two-day trips. 
@@ -27,14 +30,6 @@ trip_datetimes = [datetime(2019,6,12,8,0,0); datetime(2019,6,26,8,0,0); datetime
 
 sanpablo_datetimes = [datetime(2019,6,12,10,30,0), datetime(2019,6,27,9,15,00), datetime(2019,7,10,9,30,0), datetime(2019,7,19,7,15,0), datetime(2019,8,7,9,15,0), datetime(2019,8,15,10,15,0),datetime(2019,8,21,8,15,0)];
 grizzly_datetimes = [datetime(2019,6,13,9,0,0), datetime(2019,6,26,9,45,0), datetime(2019,7,9,10,0,0), datetime(2019,7,18,8,15,0), datetime(2019,8,6,10,0,0), datetime(2019,8,14,11,45,0), datetime(2019,8,21,11,0,0)];
-
-% Trips with Wind Events (>8m/s winds 
-% Trip 01 at Grizzly
-% Trip 04 at San Pablo
-% Trip 05 at Grizzly
-winds = [1 4 5];
-nonwinds = [2 3 6 7];
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Plotting Prep
@@ -68,3 +63,34 @@ depth2 = '0.5-1cm depth';
 depth3 = '2-3cm depth';
 depth4 = '4-5cm depth';
 depth_titles = {depth1, depth2, depth3, depth4};
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figure out how many syringes there are... (should always be 6...)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+diff = combined_cores(:,end) - combined_cores(:,1); 
+diff = diff+1;
+n_sp_syringes = 0;
+n_g_syringes = 0;
+for ii = 1:n_cores
+    if ii <= n_sp_cores
+        n_sp_syringes = n_sp_syringes + diff(ii);
+    else
+        n_g_syringes = n_g_syringes + diff(ii);
+    end
+end
+n_syringes = sum(diff); 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figure out which core came first 
+% (for Salinity Adjustment and Plotting)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+is_grizzly_first = isempty(find(sanpablo_cores == 1));
+if is_grizzly_first
+    first_label = 'Grizzly Bay';
+    second_label = 'San Pablo Bay';
+else
+    first_label = 'San Pablo Bay';
+    second_label = 'Grizzly Bay';
+end

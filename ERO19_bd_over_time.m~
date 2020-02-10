@@ -2,7 +2,7 @@
 % lukas_wp@berkeley.edu
 % UC Berkeley / USGS PCMSC
 
-% Last Updated 10 February 2020
+% Last Updated 6 November 2019
 
 % Plotting change in time for bulk density over trips 1-7 (summer 2019)
 ERO19_prep
@@ -26,6 +26,7 @@ hold on
 for nn = 1:n_trips 
     % Using "nn" because "ii" gets overwritten when `run_trip_#` is executed. 
     % Set nn = 1:n_trips to capture all trips. 
+    % Set nn = neaps or nn = springs to go through neap or spring tides.
     eval(strcat('run_trip_',num2str(nn)));
     
     avg_sp_core_bd = (intra_core_means(:,1) + intra_core_means(:,2))./2;
@@ -34,9 +35,9 @@ for nn = 1:n_trips
     sanpablo_bd_std = [sanpablo_bd_std std_sp_core_bd];
     
     % To plot just averages, across all cores...
+%     errorbar(avg_sp_core_bd,depths,std_sp_core_bd./sqrt(3),'horizontal','o-','MarkerEdgeColor',colors_g(nn,:),'Color',colors_g(nn,:),'LineWidth',2);
+% Note, Standard Error of the Mean
     plot(avg_sp_core_bd,depths,'o-','Color',colors_r(nn,:),'LineWidth',2);
-    % use errorbar() Instead, with std error of the mean
-    % errorbar(avg_sp_core_bd,depths,std_sp_core_bd./sqrt(3),'horizontal','o-','MarkerEdgeColor',colors_g(nn,:),'Color',colors_g(nn,:),'LineWidth',2);
     
     % This for loop plots lines for each box core. 
 %     for kk = 1:n_sp_cores
@@ -79,17 +80,19 @@ for nn = 1:n_trips
         avg_g_core_bd = (intra_core_means(:,3) + intra_core_means(:,4))./2;
         std_g_core_bd = sqrt((intra_core_std(:,3).^2 + intra_core_std(:,4).^2)./2);
     elseif n_cores == 3
-        % Case (on trip 8) where Grizzly only had one core...
-        avg_g_core_bd = intra_core_means(3); % San Pablo is first two, grizzly (all 6 syringes) averaged in third column. 
-        std_g_core_bd = sqrt(intra_core_std(:,3).^2);
-    end
-    grizzly_bd_means = [grizzly_bd_means avg_g_core_bd];
-    grizzly_bd_std = [grizzly_bd_std std_g_core_bd];
-    
         
+    end
+        grizzly_bd_means = [grizzly_bd_means avg_g_core_bd];
+        
+        grizzly_bd_std = [grizzly_bd_std std_g_core_bd];
+    elseif n_cores == 3
+        
+        
+    end
+    
     % To plot just averages, across all cores...
+%     errorbar(avg_g_core_bd,depths,std_g_core_bd,'horizontal','o-','MarkerEdgeColor',colors_g(nn,:),'Color',colors_g(nn,:),'LineWidth',2);
     plot(avg_g_core_bd,depths,'o-','Color',colors_b(nn,:),'LineWidth',2);
-    % errorbar(avg_g_core_bd,depths,std_g_core_bd./sqrt(3),'horizontal','o-','MarkerEdgeColor',colors_g(nn,:),'Color',colors_g(nn,:),'LineWidth',2);
     
     % This for loop plots lines for each box core. 
 %     for kk = n_sp_cores+1:n_sp_cores+n_g_cores

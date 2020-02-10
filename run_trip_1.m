@@ -28,7 +28,6 @@ GS = GS(3:end,:); % Trim it!
 
 GS = [GS(1:16,:); GS(18:49,:)]; 
 % Remove duplicates which didn't seem to have an effect. 
-n_GS_depths = 4;
 
 carbon = csvread('trip01/01_carbon.csv',1,0);
 % Total Carbon, Total Organic Carbon, Total Inorganic Carbon, CaCO3
@@ -37,10 +36,9 @@ carbon = csvread('trip01/01_carbon.csv',1,0);
 % Run Processing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ERO19_prep
-ERO19_gs_prep
 
 ERO19_bulk_density
-ERO19_bulk_density_plotting
+% ERO19_bulk_density_plotting
 
 ERO19_grain_size
 % ERO19_grain_size_plotting

@@ -23,13 +23,11 @@ salinity_sanpablo = 20.9; % ppt
 salinity_grizzly = 6.5; % ppt
 
 GS = csvread('trip07/07_grain_size.csv',2,2);
-n_GS_depths = 4;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Run Processing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ERO19_prep
-ERO19_gs_prep
 
 ERO19_bulk_density
 % ERO19_bulk_density_plotting
