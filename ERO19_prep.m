@@ -4,7 +4,7 @@
 
 % Last Edited 10 October 2019
 
-% Ostensibly to be run to process each individual field run. 
+% To be run to process each individual field run. 
 % DATA CLEANING TO HAPPEN IN TRIP RUN FILES, BEFORE RUNNING THIS SCRIPT
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

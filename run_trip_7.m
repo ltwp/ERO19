@@ -10,8 +10,8 @@
 
 fprintf('Running Trip 07 Processing.\n');
 
-weights = csvread('trip07/07_bulk_densities.csv',6,1); 
-last_long_syringe = weights(67:end,1:4);
+weights = readmatrix('2019-625-FA_BD_ALL.xlsx','Sheet',7,'Range','B8:E79');
+last_long_syringe = readmatrix('2019-625-FA_BD_ALL.xlsx','Sheet',7,'Range','B74:E82');
 weights = weights(1:72,1:4);
 
 sanpablo_cores = [1 3; 4 6]; 

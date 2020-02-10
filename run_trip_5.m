@@ -10,8 +10,7 @@
 
 fprintf('Running Trip 05 Processing.\n');
 
-weights = csvread('trip05/05_bulk_densities.csv',6,1); 
-weights = weights(1:72,1:4);
+weights = readmatrix('2019-625-FA_BD_ALL.xlsx','Sheet',5,'Range','B8:E79');
 
 sanpablo_cores = [7 9; 10 12]; 
 grizzly_cores = [1 3; 4 6];
