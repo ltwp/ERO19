@@ -2,9 +2,9 @@
 % lukas_wp@berkeley.edu
 % UC Berkeley / USGS PCMSC
 
-% Last Updated 10 October 2019
+% Last Updated 18 February 2020
 
-ERO19_prep
+ERO19_trend_prep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SAN PABLO BAY
@@ -24,22 +24,22 @@ for nn = 1:n_trips
             semilogx(size_bins,first_bay_means(aa,:),'Color',colors_r(nn,:));
         end
         hold on
-        eval(['title(depth' num2str(aa) ',''FontSize'',24);']);
+        title(depth_titles{aa});
         xlabel('Size (mm)'); ylabel('% weight');
         xticks([0.001 0.016 0.062 1]);
         xticklabels({'0.001','0.016','0.062','1'});
-        ax = gca;
-        ax.FontSize = 20; 
     end 
     
 end
+
+sgtitle('San Pablo Bay');
+legend(trip_date_labels)
 linkaxes(uu)
 ylim([0 10])
 xlim([10^-4 1])
-
-legend(trip_date_labels)
-sgtitle('San Pablo Bay','FontSize',24);
 hold off
+% FOR SOME REASON THESE LINES NEED TO  BE IN THIS PARTICULAR ORDER,
+% OTHERWISE MATLAB MESSES UP SGTITLES & LEGENDS ... BE WARY
 
 
 
@@ -61,20 +61,20 @@ for nn = 1:n_trips
             semilogx(size_bins,second_bay_means(aa,:),'Color',colors_b(nn,:));
         end
         hold on
-        eval(['title(depth' num2str(aa) ',''FontSize'',24);']);
+        title(depth_titles{aa});
         xlabel('Size (mm)'); ylabel('% weight');
         xticks([0.001 0.016 0.062 1]);
         xticklabels({'0.001','0.016','0.062','1'});
         xlim([10^-4 1])
-        ax = gca;
-        ax.FontSize = 20; 
     end
 end
 
+legend(trip_date_labels)
+sgtitle('Grizzly Bay');
 linkaxes(uu)
 ylim([0 10])
 xlim([10^-4 1])
-legend(trip_date_labels)
+hold off
 
 
 

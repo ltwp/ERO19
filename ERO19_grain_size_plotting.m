@@ -58,7 +58,7 @@ end
 sgtitle(strcat(strcat(first_label,' (blue)'),', ',strcat(second_label,' (red)')));
 linkaxes(uu)
 ylim([0 10])
-xlim([-inf -1])
+xlim([-inf -0.5])
 hold off
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

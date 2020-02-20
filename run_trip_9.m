@@ -1,26 +1,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TRIP 08 (November 25 2019)
+% TRIP 09 (January 22/23 2020)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Lukas WinklerPrins
+% Lukas WinklerPrins & Sam McGill
 % lukas_wp@berkeley.edu
 % UC Berkeley / USGS PCMSC
 
-% Last Edited 5 December 2019
+% Last Edited 11 February 2020
 
-fprintf('Running Trip 08 Processing.\n');
+fprintf('Running Trip 09 Processing.\n');
 
-weights = csvread('trip08/08_bulk_densities.csv',6,1); 
-weights = weights(1:72,1:4);
+weights = xlsread('trip09/2020-603-FA Trip 9 BD','B8:G85'); 
+weights = [weights(1:54,1:4); weights(61:end,1:4)]; % Removed extra errant syringe. 
 
-sanpablo_cores = [1 3; 4 6]; 
-grizzly_cores = [7 12];
+sanpablo_cores = [7 9;10 12]; 
+grizzly_cores = [1 3;4 6];
 % Each row represents a different gomex, with syringe number starts and
 % ends. 
-
-% NOTE THIS TRIP... B/C ALL SYRINGES CAME FROM ONE CORE, BREAKS SOME
-% INTRA_CORE_MEAN CODE (i.e. in ERO19_bd_over_time)?could arbitrarily
-% separate 
 
 salinity_sanpablo = 20.9; % ppt, from Trip 6
 salinity_grizzly = 6.5; % ppt, from Trip 6
